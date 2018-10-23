@@ -7,11 +7,11 @@ import java.util.concurrent.locks.ReentrantLock;
  * Wrapper class for implementing one-dimensional iterative averaging using
  * phasers.
  */
-public final class OneDimAveragingPhaser {
+public final class OneDimAveragingPhaserLocks {
     /**
      * Default constructor.
      */
-    private OneDimAveragingPhaser() {
+    private OneDimAveragingPhaserLocks() {
     }
 
     /**
@@ -112,9 +112,9 @@ public final class OneDimAveragingPhaser {
             final double[] myNew, final double[] myVal, final int n,
             final int tasks) {
 
-        Phaser[] phs = new Phaser[tasks];
+        ReentrantLock[] phs = new ReentrantLock[tasks];
         for(int i=0;i<phs.length;i++){
-            phs[i] = new Phaser(1);
+            phs[i] = new ReentrantLock();
         }
 
         Thread[] threads = new Thread[tasks];
@@ -126,24 +126,39 @@ public final class OneDimAveragingPhaser {
                 double[] threadPrivateMyVal = myVal;
                 double[] threadPrivateMyNew = myNew;
 
-                for (int iter = 0; iter < iterations; iter++) {
-                    final int left = i * (n / tasks) + 1;
-                    final int right = (i + 1) * (n / tasks);
+                final int left = i * (n / tasks) + 1;
+                final int right = (i + 1) * (n / tasks);
 
-                    for (int j = left; j <= right; j++) {
+
+                for (int iter = 0; iter < iterations; iter++) {
+                    phs[i].lock();
+                    threadPrivateMyNew[left] = (threadPrivateMyVal[left-1] + threadPrivateMyNew[left+1]) / 2.0;
+                    threadPrivateMyNew[right] = (threadPrivateMyVal[right-1] + threadPrivateMyVal[right+1]) / 2.0;
+                    phs[i].unlock();
+                    for (int j = left+1; j <= right-1; j++) {
                         threadPrivateMyNew[j] = (threadPrivateMyVal[j - 1]
                                 + threadPrivateMyVal[j + 1]) / 2.0;
                     }
-                    phs[i].arrive();
-                    if(i-1>=0){
-                        phs[i-1].awaitAdvance(iter);
+                    if(i-1 >= 0){
+                        while(!phs[i-1].tryLock()){
+                            continue;
+                        }
                     }
                     if(i+1<tasks){
-                        phs[i+1].awaitAdvance(iter);
+                        while(!phs[i+1].tryLock()){
+                            continue;
+                        }
                     }
+
                     double[] temp = threadPrivateMyNew;
                     threadPrivateMyNew = threadPrivateMyVal;
                     threadPrivateMyVal = temp;
+                    if(i-1 >= 0){
+                        phs[i-1].unlock();
+                    }
+                    if(i+1 < tasks){
+                        phs[i+1].unlock();
+                    }
                 }
             });
             threads[ii].start();
