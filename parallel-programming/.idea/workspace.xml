@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4c897adb-afe6-4615-95f7-915f588fe804" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniproject_4/src/main/java/edu/coursera/parallel/OneDimAveragingPhaser.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniproject_4/src/main/java/edu/coursera/parallel/OneDimAveragingPhaser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniproject_4/target/classes/edu/coursera/parallel/OneDimAveragingPhaser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniproject_4/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/miniproject_4/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniproject_4/target/surefire-reports/TEST-edu.coursera.parallel.OneDimAveragingPhaserTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/miniproject_4/target/surefire-reports/TEST-edu.coursera.parallel.OneDimAveragingPhaserTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniproject_4/target/surefire-reports/edu.coursera.parallel.OneDimAveragingPhaserTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/miniproject_4/target/surefire-reports/edu.coursera.parallel.OneDimAveragingPhaserTest.txt" afterDir="false" />
-    </list>
+    <list default="true" id="4c897adb-afe6-4615-95f7-915f588fe804" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +12,7 @@
     <session id="-1772410743">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="3" />
@@ -29,12 +22,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="10" />
+          <entry key="java" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="10" />
+          <entry key="JAVA" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -55,11 +48,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/miniproject_4/src/main/java/edu/coursera/parallel/OneDimAveragingPhaser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="916">
-              <caret line="157" column="9" lean-forward="true" selection-start-line="157" selection-start-column="9" selection-end-line="157" selection-end-column="9" />
+            <state relative-caret-position="114">
+              <caret line="111" column="14" lean-forward="true" selection-start-line="111" selection-start-column="14" selection-end-line="111" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -67,12 +60,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/miniproject_4/src/main/java/edu/coursera/parallel/locks_attempt.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/miniproject_4/src/main/java/edu/coursera/parallel/OneDimAveragingPhaserLocks.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
-            </state>
+            <state relative-caret-position="-1743" />
           </provider>
         </entry>
       </file>
@@ -241,7 +232,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540266621893" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540266789265" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -273,12 +264,12 @@
       <workItem from="1539667933318" duration="3691000" />
       <workItem from="1540074121059" duration="3716000" />
       <workItem from="1540165604947" duration="3619000" />
-      <workItem from="1540261779383" duration="4151000" />
+      <workItem from="1540261779383" duration="4489000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22808000" />
+    <option name="totallyTimeSpent" value="23146000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="3628" y="969" width="1680" height="947" extended-state="0" />
@@ -351,20 +342,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/miniproject_4/src/main/java/edu/coursera/parallel/OneDimAveragingPhaser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="916">
-          <caret line="157" column="9" lean-forward="true" selection-start-line="157" selection-start-column="9" selection-end-line="157" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/miniproject_4/src/main/java/edu/coursera/parallel/locks_attempt.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+          <caret line="9" column="45" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/miniproject_4/src/main/java/edu/coursera/parallel/OneDimAveragingPhaserLocks.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1743" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/miniproject_4/src/main/java/edu/coursera/parallel/OneDimAveragingPhaser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="111" column="14" lean-forward="true" selection-start-line="111" selection-start-column="14" selection-end-line="111" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
